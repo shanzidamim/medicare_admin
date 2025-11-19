@@ -19,7 +19,6 @@ class _SidebarState extends State<Sidebar> {
     {"icon": Icons.dashboard, "title": "Doctors"},
     {"icon": Icons.people, "title": "Users"},
     {"icon": Icons.local_hospital, "title": "Shops"},
-    {"icon": Icons.calendar_month, "title": "Appointments"},
   ];
 
   @override

@@ -20,7 +20,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     AdminDoctorsScreen(),
     AdminUsersScreen(),
     AdminShopsScreen(),
-    AdminAppointmentsScreen(),
+
 
   ];
 
