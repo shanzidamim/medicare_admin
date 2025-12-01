@@ -29,7 +29,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
       body: Row(
         children: [
-          // ✅ Replace NavigationRail with Sidebar
           Sidebar(
             selectedIndex: _selectedIndex,
             onItemSelected: (index) {
@@ -39,7 +38,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
             },
           ),
 
-          // ✅ Main content area
           Expanded(
             child: Container(
               color: const Color(0xfffdf5ff),

@@ -145,4 +145,19 @@ class AdminApi {
     });
     return response.data;
   }
+  String fixImage(String? url) {
+    if (url == null || url.isEmpty) return "";
+
+    // Already full URL
+    if (url.startsWith("http")) return url;
+
+    // Get base host (remove /api/admin)
+    final base = API_URL.replaceAll("/api/admin", "");
+
+    // ensure leading slash
+    if (!url.startsWith("/")) url = "/$url";
+
+    return "$base$url";
+  }
+
 }

@@ -86,7 +86,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                         : const Text(
                       'Login',
                       style: TextStyle(
-                        color: Colors.black,     // 🔥 MAKE TEXT BLACK
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

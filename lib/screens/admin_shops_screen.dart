@@ -31,7 +31,7 @@ class _AdminShopsScreenState extends State<AdminShopsScreen> {
       shops = await api.getShops();
       divisions = await api.fetchDivisions();
     } catch (e) {
-      debugPrint("❌ loadAll shops error: $e");
+      debugPrint(" loadAll shops error: $e");
       shops = [];
       divisions = [];
     } finally {
@@ -105,11 +105,11 @@ class _AdminShopsScreenState extends State<AdminShopsScreen> {
                     radius: 20,
                     backgroundImage: (s['image_url'] != null &&
                         s['image_url'].toString().isNotEmpty)
-                        ? NetworkImage(s['image_url'])
-                        : const AssetImage("assets/image/default_shop.png")
-                    as ImageProvider,
+                        ? NetworkImage(api.fixImage(s['image_url']))
+                        : const AssetImage("assets/image/default_shop.png") as ImageProvider,
                   ),
                 ),
+
 
                 /// ---- SHOP NAME ----
                 DataCell(
@@ -175,6 +175,7 @@ class _ShopForm extends StatefulWidget {
 }
 
 class _ShopFormState extends State<_ShopForm> {
+  final api = AdminApi();
   final _formKey = GlobalKey<FormState>();
 
   final name = TextEditingController();
@@ -229,7 +230,8 @@ class _ShopFormState extends State<_ShopForm> {
                             widget.initial!['image_url']
                                 .toString()
                                 .isNotEmpty)
-                            ? NetworkImage(widget.initial!['image_url'])
+                            ? NetworkImage(api.fixImage(widget.initial!['image_url']))
+
                             : const AssetImage(
                             "assets/image/default_shop.png")
                         as ImageProvider,
